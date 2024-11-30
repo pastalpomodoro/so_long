@@ -24,17 +24,19 @@ typedef struct game
 {
 	void	*mlx;
 	void	*win;
-	void	*mappe;
+	char	**map_ber;
 	void	*wall;
 	void	*floor;
 	void	*player;
-	void	*addr;
-	char	**map_ber;
-	int		size_line;
-	int		bits_per_pixel;
-	int		endian;
-	int		x;
-	int		y;
+	void 	*door;
+	void	*banana;
+	// void	*mappe;
+	// void	*addr;
+	// int		size_line;
+	// int		bits_per_pixel;
+	// int		endian;
+	// int		x;
+	// int		y;
 }		t_game;
 
 //utils
@@ -53,6 +55,8 @@ int		find(char **map);
 int		parsing(char **map);
 
 //game
+void	file_to_image(t_game *game);
+void	fill_screen(t_game *game);
 void	player_settings(t_game *game);
 
 #endif
