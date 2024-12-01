@@ -30,6 +30,7 @@ typedef struct game
 	void	*player;
 	void 	*door;
 	void	*banana;
+	void 	*open_door;
 	int		y;
 	int		x;
 	// void	*mappe;

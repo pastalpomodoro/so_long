@@ -34,4 +34,5 @@ void	file_to_image(t_game *game)
 	game->player = mlx_xpm_file_to_image(game->mlx, "textures/king.xpm", &largeur, &hauteur);
     game->door = mlx_xpm_file_to_image(game->mlx, "textures/door.xpm", &largeur, &hauteur);
     game->banana = mlx_xpm_file_to_image(game->mlx, "textures/banana.xpm", &largeur, &hauteur);
+    game->open_door = mlx_xpm_file_to_image(game->mlx, "textures/banana.xpm", &largeur, &hauteur);
 }
