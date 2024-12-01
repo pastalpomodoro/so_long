@@ -44,6 +44,7 @@ int	main()
 		start++;
 	}
 
+	player_settings(game);
 	mlx_loop(game->mlx);
 	ft_free(game->map_ber);
 	free(game);

@@ -3,7 +3,7 @@ NAME= so_long
 CC= cc
 FLAG= -Wall -Werror -Wextra -g3
 
-SRC= mappe.c so_long.c utils/get_next_line.c utils/get_next_line_utils.c utils/map_utils.c parsing/parsing.c parsing/parsing1.c
+SRC= player.c mappe.c so_long.c utils/get_next_line.c utils/get_next_line_utils.c utils/map_utils.c parsing/parsing.c parsing/parsing1.c
 
 BIN_PATH=bin/
 OBJ=$(addprefix $(BIN_PATH), $(SRC:.c=.o))

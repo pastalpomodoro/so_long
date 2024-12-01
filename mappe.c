@@ -1,38 +1,5 @@
 #include "so_long.h"
 
-// void fill_screen(t_game *game)
-// {
-// 	int x;
-// 	int y;
-// 	int fd;
-// 	int size;
-// 	char *buffer;
-	
-// 	fd = open("mappe.ber", O_RDONLY);
-// 	buffer = malloc(2);
-// 	buffer[1] = '\0';
-// 	read(fd, buffer, 1);
-// 	x = 0;
-// 	y = 0;
-// 	size = size_x_map(game->map_ber[0]);
-// 	while (*buffer)
-// 	{
-// 		if (buffer[0] == '1')
-// 			mlx_put_image_to_window(game->mlx, game->win, game->wall, x * 40, y * 40);
-// 		if (buffer[0] == '0')
-// 			mlx_put_image_to_window(game->mlx, game->win, game->floor, x * 40, y * 40);
-// 		if (buffer[0] == 'P')
-// 			mlx_put_image_to_window(game->mlx, game->win, game->player, x * 40, y * 40);
-// 		x++;
-// 		if (x == size)
-// 		{
-// 			x = 0;
-// 			y++;
-// 		}
-// 		read(fd, buffer, 1);
-// 	}
-// 	close(fd);
-// }
 void    fill_screen(t_game *game)
 {
     int x;

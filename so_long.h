@@ -30,13 +30,13 @@ typedef struct game
 	void	*player;
 	void 	*door;
 	void	*banana;
+	int		y;
+	int		x;
 	// void	*mappe;
 	// void	*addr;
 	// int		size_line;
 	// int		bits_per_pixel;
 	// int		endian;
-	// int		x;
-	// int		y;
 }		t_game;
 
 //utils
