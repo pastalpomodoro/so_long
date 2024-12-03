@@ -38,12 +38,10 @@ int *find_pos(char **map, char c)
 }
 int open_dor(t_game *game)
 {
-	int y;
 	int x;
-	int i;
+	int y;
 	int *tab;
 
-	i = 0;
 	y = -1;
 	while (y++, game->map_ber[y])
 	{
@@ -52,17 +50,15 @@ int open_dor(t_game *game)
 		{
 			if (game->map_ber[y][x] == 'C')
 				return (0);
-			if (game->map_ber[y][x] == 'E')
-				i = 1;	
 		}
 	}
-	printf("\n%i\n", i);
-	if (i == 1)
-	{
-		tab = find_pos(game->map_ber, 'E');
-		game->map_ber[tab[0]][tab[1]] = '0';
-		mlx_put_image_to_window(game->mlx, game->win, game->open_door, tab[0] * 40, tab[1] * 40);
-	}
+	tab = find_pos(game->map_ber, 'E');
+	if (tab == NULL)
+		return (-1);
+	printf("\n%s\n", game->map_ber[tab[0]]);
+	//game->map_ber[tab[0]][tab[1]] = '0';
+	mlx_put_image_to_window(game->mlx, game->win, game->open_door, tab[1] * 40, tab[0] * 40);
+	free(tab);
 	return (1);
 }
 
@@ -97,6 +93,7 @@ int	mooving_player(int keycode, void *stru)
 	int y = -1;
 	while (y++, game->map_ber[y])
 		printf("%s\n", game->map_ber[y]);
+	printf("\n");
 	mlx_put_image_to_window(game->mlx, game->win,
 		game->floor, temp_x * 40, temp_y * 40);
 	mlx_put_image_to_window(game->mlx, game->win,
@@ -111,6 +108,7 @@ void	player_settings(t_game *game)
 	tab = find_pos(game->map_ber, 'P');
 	game->y = tab[0];
 	game->x = tab[1];
+	open_dor(game);
 	mlx_key_hook(game->win, mooving_player, game);
 	free(tab);
 }
